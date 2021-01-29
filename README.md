@@ -1,3 +1,3 @@
 # easyvote
-简单投票
+简单投票<br>
 第一个Java项目
