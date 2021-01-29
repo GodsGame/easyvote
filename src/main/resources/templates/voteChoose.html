@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmln="http//www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/voteChoose.css}" rel="stylesheet" type="text/css" charset="utf-8">
+</head>
+<body>
+
+<div class="part1">&nbsp;</div>
+<h1 class="title1">选择本轮目标和评委</h1>
+<form th:action="@{/voteDecide}">
+<div class="vote1">选择投票目标</div>
+<div class="target" id="target">
+    <span th:each="target:${targets}">
+        <div style="float: left">
+            <div>
+                <input type="checkbox" th:value="${target.get('name')}" name="targetName">
+                <span th:text="${target.get('name')}"></span>
+                <span>&nbsp;&nbsp;</span>
+            </div>
+            <div>
+                <span>&nbsp;&nbsp;票数:</span>
+                <span th:text="${target.get('votes')}"> </span>
+                <span>&nbsp;&nbsp;</span>
+            </div>
+        </div>
+        <span th:if="${(targets.indexOf(target) + 1) mod 12 eq 0}"><br><br><br></span>
+    </span>
+</div>
+<br><br>
+<div class="vote2">选择评委</div>
+<div class="judge" id="judge">
+    <span th:each="judge:${judges}">
+        <input type="checkbox" th:value="${judge.get('name')}" name="judgeName">
+        <span th:text="${judge.get('name')}"></span>
+        <span>&nbsp;</span>
+        <span th:if="${(judges.indexOf(judge) + 1) mod 12 eq 0}"><br><br><br></span>
+    </span>
+</div>
+<div class="vote2">评委是否共用</div>
+<div class="judge">
+    <input type="radio" value="yes" name="share">是
+    <input type="radio" value="no" name="share">否
+</div>
+<button type="submit" class="vote-botton">确定</button>
+<div  style="margin-left: 8%;color: red;font-size: 15px;margin-top: 10px" th:text="${msg}"></div>
+</form>
+</body>
+</html>

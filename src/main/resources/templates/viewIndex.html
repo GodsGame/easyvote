@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmln="http//www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/viewIndex.css}" rel="stylesheet" type="text/css" charset="utf-8">
+    <script src="/js/viewIndex.js"></script>
+</head>
+<body>
+<div class="part1">&nbsp;</div>
+<div style="margin-top: 90px;">
+    <div style="margin-left: 14%;">
+        <span>^_^</span>
+        <span>这是一个不知名的投票网站</span>
+    </div>
+    <button  class="button">已创建的项目</button>
+    <a th:href="@{/main}"><button  class="button">创建新项目</button></a>
+    <a th:href="@{/}"><button  class="button" type="button">退出登录</button></a>
+</div>
+<div class="trans"> </div>
+<div class="part2">当前项目</div>
+<div class="part3">被投票目标</div>
+<div class="target" id="target">
+    <div th:each="target:${targets}">
+        <div style="float: left">
+            <div>
+                <span th:text="${target.get('id')}"></span>
+                <span>.&nbsp</span>
+                <span th:text="${target.get('name')}"></span>
+                <span>&nbsp</span>
+                <span>&nbsp;&nbsp;</span>
+            </div>
+            <div>
+                <span>票数:</span>
+                <span th:text="${target.get('votes')}" id="votes" class="votes"> </span>
+                <span>&nbsp;&nbsp;</span>
+            </div>
+        </div>
+        <span th:if="${(targets.indexOf(target)+1) mod 12 eq 0 and targets.indexOf(target) ne 0}"><br><br></span>
+    </div>
+    <br><br>
+</div>
+<div>
+<a th:href="@{/judge}"><button type="button" class="vote1-botton1">管理评委</button></a>
+<a th:href="@{/empty}"><button type="button" class="vote1-botton">清空票数</button></a><br>
+</div>
+<span class="id">
+    <span>项目id:</span>
+    <span th:text="${id}" style="font-weight: bolder;"> </span>
+</span>
+<a th:href="@{/voteChoose}"><button type="button" class="vote1-botton2">进入项目</button></a>
+<a th:href="@{/delete}"><button type="button" class="vote1-botton3">删除项目</button></a>
+</body>
+</html>

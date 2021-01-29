@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmln="http//www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页</title>
+    <link th:href="@{/css/login.css}" rel="stylesheet" type="text/css" charset="utf-8">
+    <script src="/js/login.js"></script>
+</head>
+<body>
+    <form th:action="@{/user/login}">
+    <div class="part1">&nbsp;</div>
+    <div class="part2">
+        <span><input class="input" type="text" name="username" placeholder="用户名"></span><br><br>
+        <span><input class="input" type="password" name="password" placeholder="密码"></span><br><br>
+        <div id="id">
+            <span><input class="input" type="number" placeholder="ID" name="id"></span><br><br>
+        </div>
+        <p class="size"  style="color: red;text-align:center;margin-left: 43%;" th:text="${msg}">hello</p>
+        <span><button class="button" type="submit" style="margin-left: -5px">登录</button></span><br><br>
+        <div class="down">
+            <div class="down1"><a th:href="@{/signUp}">立即注册</a></div>
+        </div>
+    </div>
+<!--    <div class="part3">&nbsp;</div>-->
+<!--    <div class="part4">VoteNow</div>-->
+    <div class="part6">
+        <button class="part5-1" onclick="on()" type="button">评委登录</button>
+        <button class="part5-2" onclick="hide()" type="button">用户登录</button>
+    </div>
+    </form>
+</body>
+</html>

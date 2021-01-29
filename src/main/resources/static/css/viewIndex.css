@@ -1,0 +1,117 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url("../img/主页背景1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.part1{
+    opacity: 0.3;
+    width: 90%;
+    height: 100%;
+    background-color: azure;
+    position: absolute;
+    left: 5%;
+    top: 0%;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.button{
+    background-color: cornflowerblue;
+    border :none;
+    width: 10%;
+    height: 30px;
+    opacity: 0.8;
+    position: relative;
+    left: 32%;
+    margin-right: 20px;
+    font-family: 微软雅黑;
+    border-radius: 5px;
+}
+.trans{
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 80%;
+    height: 500px;
+    border-color: antiquewhite;
+    border-style: solid;
+    border-radius: 5px;
+}
+.part2{
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+}
+.part3{
+    margin-left: 15%;
+    font-weight: 600;
+    margin-top: 10px;
+    position: relative;
+}
+.target{
+    position: relative;
+    margin-left: 15%;
+    margin-top: 10px;
+}
+.vote1-botton1{
+    background-color: cornflowerblue;
+    border :none;
+    width: 5%;
+    height: 30px;
+    opacity: 0.8;
+    font-family: 微软雅黑;
+    border-radius: 5px;
+    margin-left: 15%;
+    margin-top: 10px;
+}
+.vote1-botton{
+    background-color: cornflowerblue;
+    border :none;
+    width: 5%;
+    height: 30px;
+    opacity: 0.8;
+    font-family: 微软雅黑;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+
+}
+.id{
+    position: fixed;
+    left: 15%;
+    top: 80%;
+    font-family: 微软雅黑;
+}
+.vote1-botton2{
+    background-color: cornflowerblue;
+    border :none;
+    width: 10%;
+    height: 34px;
+    opacity: 0.8;
+    font-family: 微软雅黑;
+    border-radius: 5px;
+    position: fixed;
+    left: 67%;
+    top: 80%;
+}
+.vote1-botton3{
+    background-color: red;
+    border :none;
+    width: 10%;
+    height: 34px;
+    opacity: 0.8;
+    font-family: 微软雅黑;
+    border-radius: 5px;
+    position: fixed;
+    left: 78%;
+    top: 80%;
+}
+.votes{
+    font-weight: bolder;
+}

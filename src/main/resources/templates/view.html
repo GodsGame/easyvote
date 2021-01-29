@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmln="http//www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/view.css}" rel="stylesheet" type="text/css" charset="utf-8">
+    <script src="/js/login.js"></script>
+</head>
+<body>
+<div class="part1"> </div>
+<h1 class="title1">当前票数</h1>
+<div class="target" id="target">
+    <span th:each="target:${targets}">
+        <div style="float: left">
+            <div>
+                <span th:text="${target.get('name')}"></span>
+                <span>&nbsp;&nbsp;</span>
+            </div>
+            <div>
+                <span>票数:</span>
+                <span th:text="${target.get('votes')}" id="votes" class="votes"> </span>
+                <span>&nbsp;&nbsp;</span>
+            </div>
+        </div>
+        <span th:if="${(targets.indexOf(target) + 1) mod 8 eq 0}"><br><br><br></span>
+    </span>
+    <br><br>
+</div>
+<a th:href="@{/voteChoose}"><button type="button" class="vote-botton1">开始下一轮</button></a>
+<a th:href="@{/project}"><button type="button" class="vote-botton2">结束项目</button></a>
+<div style="position: fixed;top: 10%;left:76%;font-size: 200px">
+    <span th:text="${round}"></span>
+</div>
+<div  style="position: fixed;top: 38%;left:74%;font-size: 50px;font-family: 微软雅黑;">
+    <span>当前轮数</span>
+</div>
+</body>
+</html>

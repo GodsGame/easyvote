@@ -1,0 +1,66 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url("../img/主页背景1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.part1{
+    opacity: 0.3;
+    width: 90%;
+    height: 100%;
+    background-color: azure;
+    position: absolute;
+    left: 5%;
+    top: 0%;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.title1{
+    position: relative;
+    margin-left: 45%;
+}
+.vote1{
+    position: relative;
+    font-size: large;
+    margin-left: 8%;
+    margin-top: 10px;
+}
+.target {
+    position: relative;
+    margin-left: 8%;
+}
+.vote-botton{
+    background-color: cornflowerblue;
+    border :none;
+    width: 3%;
+    height: 30px;
+    opacity: 0.8;
+    font-family: 微软雅黑;
+    border-radius: 5px;
+    margin-top: 10px;
+    position: absolute;
+}
+.vote-botton2{
+    background-color: red;
+    border :none;
+    width: 6%;
+    height: 30px;
+    opacity: 0.8;
+    font-family: 微软雅黑;
+    border-radius: 5px;
+    margin-top: 10px;
+    position: relative;
+}
+.votes{
+    font-weight: bolder;
+}
+.size{
+    font-size: 9px;
+    color: red;
+    margin-left: 8%;
+    position: absolute;
+    top: 8%;
+}

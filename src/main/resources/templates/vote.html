@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmln="http//www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/vote.css}" rel="stylesheet" type="text/css" charset="utf-8">
+    <script src="/js/vote.js"></script>
+</head>
+<body>
+<div class="part1"> </div>
+<h1 class="title1">投票页面</h1>
+<div class="target" id="target">
+    <span th:each="target:${targets}">
+        <div style="float: left">
+            <div>
+                <span th:text="${target.get('name')}"></span>
+                <span>&nbsp;&nbsp;</span>
+            </div>
+            <div>
+                <span>票数:</span>
+                <span th:text="${target.get('votes')}" id="votes" class="votes"> </span>
+                <span>&nbsp;&nbsp;</span>
+            </div>
+            <div>
+                <form th:action="@{/voteIn}">
+                    <input type="hidden" th:value="${target.get('name')}" name="name">
+                    <button type="submit" class="vote-botton">投票</button>
+                </form>
+            </div>
+        </div>
+        <span th:if="${(targets.indexOf(target) + 1) mod 8 eq 0}"><br><br><br><br></span>
+    </span>
+</div>
+<div class="size" th:text="${msg}">&nbsp;</div>
+<br><br><br><br>
+<div style="margin-left: 8%;margin-top: 10px">
+<form th:action="@{/noVote}">
+    <button type="submit" class="vote-botton2">弃权</button><br><br>
+</form>
+</div>
+<div style="margin-left: 8%;font-family: 微软雅黑;">
+    <span>您的身份:</span>
+    <span th:text="${name}"> </span>
+</div>
+<div style="position: fixed;top: 10%;left:76%;font-size: 200px">
+    <span th:text="${round}"></span>
+</div>
+<div  style="position: fixed;top: 38%;left:74%;font-size: 50px;font-family: 微软雅黑;">
+    <span>当前轮数</span>
+</div>
+</body>
+</html>
